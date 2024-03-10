@@ -18,9 +18,15 @@ FetchContent_MakeAvailable(googletest)
 
 # add executables
 add_executable(main "./src/main.cpp")
-add_executable(card_test "./test/card_test.cpp" "./src/card.cpp")
+add_executable(card_test "./test/card_test.cpp")
 
-target_link_libraries(card_test gtest_main)
+# make libraries with source files
+add_library(card_library STATIC "./src/card.cpp")
+
+# link libraries to executables
+target_link_libraries(main card_library)
+target_link_libraries(card_test gtest_main card_library)
+
 
 # add test
 add_test(card_test card_test)
