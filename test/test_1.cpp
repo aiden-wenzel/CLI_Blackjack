@@ -1,10 +1,10 @@
-#include <iostream>
-#include <cassert>
+#include <gtest/gtest.h>
 
-using namespace std;
+TEST(ExampleTest, Addition) {
+    EXPECT_EQ(2 + 2, 4);
+}
 
-int main() {
-	assert(true);
-	cout << "pass" << endl;
-	return 0;
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
