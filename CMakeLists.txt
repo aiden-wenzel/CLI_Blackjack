@@ -21,7 +21,7 @@ add_executable(main "./src/main.cpp")
 add_executable(card_test "./test/card_test.cpp")
 
 # make libraries with source files
-add_library(card_library STATIC "./src/card.cpp")
+add_library(card_library STATIC "./src/card.cpp" "./src/deck.cpp")
 
 # link libraries to executables
 target_link_libraries(main card_library)
