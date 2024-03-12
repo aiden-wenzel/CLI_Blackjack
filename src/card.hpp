@@ -1,34 +1,16 @@
 #include <string>
 
-enum Rank {
-    TWO = 2,
-    THREE,
-    FOUR,
-    FIVE,
-    SIX,
-    SEVEN,
-    EIGHT,
-    NINE,
-    TEN,
-    JACK = 10,
-    QUEEN = 10,
-    KING = 10,
-    ACE,
-};
-
-enum Suit {
-    HEARTS,
-    DIAMONDS,
-    SPADES,
-    CLUBS
-};
-
 class Card {
 private:
-    Suit suit;
-    Rank rank;
+    std::string rank;
+    std::string suit;
+    int value;
+
 public:
-    Card(Suit suit_in, Rank rank_in);
-    Suit get_suit();
-    Rank get_rank();
+    Card(std::string rank_in, std::string suit_in);
+    std::string get_rank();
+    void set_rank(std::string rank_in);
+    std::string get_suit();
+    void set_suit(std::string suit_in);
+    int get_value();
 };

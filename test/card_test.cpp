@@ -2,9 +2,10 @@
 #include <gtest/gtest.h>
 
 TEST(Card, get_rank_suit) {
-    Card card(SPADES, TWO);
-    ASSERT_EQ(card.get_rank(), TWO);
-    ASSERT_EQ(card.get_suit(), SPADES);
+    Card card("two", "spades");
+    ASSERT_EQ(card.get_rank(), "two");
+    ASSERT_EQ(card.get_suit(), "spades");
+    ASSERT_EQ(card.get_value(), 2);
 }
 
 int main(int argc, char **argv) {
