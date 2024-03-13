@@ -8,6 +8,7 @@ TEST(deck, deck_constructor) {
     std::ifstream ranks("../black_jack/ranks.in");
 
     Deck deck(suits, ranks);
+    deck.shuffle_deck(100);
     ASSERT_EQ(deck.get_num_cards(), 52);
 }
 

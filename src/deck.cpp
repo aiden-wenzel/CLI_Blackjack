@@ -1,5 +1,6 @@
 #include <string>
 #include <fstream>
+#include <random>
 #include <vector>
 #include "deck.hpp"
 
@@ -34,4 +35,12 @@ Card Deck::get_card(int index) {
 
 int Deck::get_num_cards() {
     return this->num_cards;
+}
+
+void Deck::shuffle_deck(int num_swaps) {
+    for (int i = 0; i < num_swaps; i++) {
+        int random_index_1 = std::rand() % this->num_cards;
+        int random_index_2 = std::rand() % this->num_cards;
+        std::swap(this->cards[random_index_1], this->cards[random_index_2]);
+    }
 }

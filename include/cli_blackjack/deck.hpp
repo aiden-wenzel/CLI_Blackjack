@@ -1,5 +1,6 @@
 #include <vector>
 #include <fstream>
+#include <algorithm>
 #include "card.hpp"
 
 class Deck {
@@ -22,4 +23,9 @@ public:
     // @returns
     // the size of the deck in number of cards
     int get_num_cards();
+
+    // @param num_swaps
+    // defines the number of times 2 random elements will be swapped
+    // randomly shuffles the deck of cards
+    void shuffle_deck(int num_swaps);
 };
