@@ -2,6 +2,7 @@
 #include <fstream>
 #include <random>
 #include <vector>
+#include "card.hpp"
 #include "deck.hpp"
 
 Deck::Deck(std::ifstream &suits_input, std::ifstream &ranks_input) {

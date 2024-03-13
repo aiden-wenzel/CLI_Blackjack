@@ -2,6 +2,7 @@
 #include <cassert>
 #include <fstream>
 #include "deck.hpp"
+#include "card.hpp"
 
 TEST(deck, deck_constructor) {
     std::ifstream suits("../black_jack/suits.in");
