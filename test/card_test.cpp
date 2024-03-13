@@ -1,5 +1,5 @@
 #include "card.hpp"
-#include <gtest/gtest.h>
+#include <gtest.h>
 
 TEST(Card, get_rank_suit) {
     Card card("two", "spades");

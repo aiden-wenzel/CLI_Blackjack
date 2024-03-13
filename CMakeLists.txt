@@ -17,7 +17,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 # include dir
-include_directories(include)
+include_directories("include/cli_blackjack" "include/gtest")
 
 # add executables
 add_executable(main "./src/main.cpp")
