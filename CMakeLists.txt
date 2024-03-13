@@ -16,6 +16,9 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
+# include dir
+include_directories(include)
+
 # add executables
 add_executable(main "./src/main.cpp")
 add_executable(card_test "./test/card_test.cpp")
