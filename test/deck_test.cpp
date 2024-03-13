@@ -8,7 +8,7 @@ TEST(deck, deck_constructor) {
     std::ifstream ranks("../black_jack/ranks.in");
 
     Deck deck(suits, ranks);
-    assert(true); // find a more concrete way to test this
+    ASSERT_EQ(deck.get_num_cards(), 52);
 }
 
 int main(int argc, char **argv) {

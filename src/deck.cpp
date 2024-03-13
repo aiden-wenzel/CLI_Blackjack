@@ -25,6 +25,7 @@ Deck::Deck(std::ifstream &suits_input, std::ifstream &ranks_input) {
             this->cards.push_back(card_temp);
         }
     }
+    this->num_cards = this->cards.size();
 }
 
 Card Deck::get_card(int index) {
