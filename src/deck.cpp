@@ -26,3 +26,11 @@ Deck::Deck(std::ifstream &suits_input, std::ifstream &ranks_input) {
         }
     }
 }
+
+Card Deck::get_card(int index) {
+    return this->cards[index];
+}
+
+int Deck::get_num_cards() {
+    return this->num_cards;
+}
