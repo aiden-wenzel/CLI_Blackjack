@@ -11,14 +11,28 @@ private:
     std::string name;
     
 public:
+
+    // @param name_in
+    // the name of the player as a string
+    // @param money_in
+    // the amount of starting money the player should have
     Player(const std::string &name_in, double money_in);
     
+    // @returns the combined score of the cards the player is delt
     int get_card_sum();
+
+    // @param card_sum_in
+    // the new card sum
     void set_card_sum(int card_sum_in);
 
+    // @returns the total money that the player currently has
     double get_money();
+
+    // @param money_in
+    // the money that the player will have
     void set_money(double money_in);
 
+    // @returns the name of the player
     std::string get_name();
 
     void hit();
