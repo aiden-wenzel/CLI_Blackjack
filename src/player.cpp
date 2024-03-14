@@ -33,3 +33,7 @@ void Player::set_money(double money_in) {
 std::string Player::get_name() {
     return this->name;
 }
+
+Card Player::get_card_at(int index) {
+    return this->hand[index];
+}

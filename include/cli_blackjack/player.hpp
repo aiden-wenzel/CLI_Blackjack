@@ -37,7 +37,5 @@ public:
     // @returns the name of the player
     std::string get_name();
 
-    void hit();
-    
-    void double_down();
+    Card get_card_at(int index);
 };
