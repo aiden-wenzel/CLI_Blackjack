@@ -5,9 +5,4 @@ Features:
 - make player saves
 
 TODO:
-- figure out how to test deck constructor
-- add pragma once to header files so that they are only declared once!
-- figure out how to write shuffle:
-1. find two random indicies within the range of the deck
-2. swap those two cards
-3. do this 100 times
+- figure out how to test deck constructor better
