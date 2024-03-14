@@ -7,10 +7,15 @@ Player::Player(const std::string &name_in, double money_in) {
     this->name = name_in;
     this->money = money_in;
     this->card_sum = 0;
+    this->hand = {};
 }
 
 int Player::get_card_sum() {
     return this->card_sum;
+}
+
+void Player::add_card(const Card& card) {
+    this->hand.push_back(card);
 }
 
 void Player::set_card_sum(int card_sum_in) {

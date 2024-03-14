@@ -30,11 +30,13 @@ Deck::Deck(std::ifstream &suits_input, std::ifstream &ranks_input) {
     this->num_cards = this->cards.size();
 }
 
-Card Deck::get_card(int index) {
-    return this->cards[index];
+Card Deck::remove_top_card() {
+    Card top_card = this->cards[0];
+    this->cards.erase(this->cards.begin());
+    return top_card;
 }
 
-int Deck::get_num_cards() {
+int Deck::get_num_cards() const {
     return this->num_cards;
 }
 

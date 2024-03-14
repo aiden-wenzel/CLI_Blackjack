@@ -24,12 +24,14 @@ add_executable(main "./src/main.cpp")
 add_executable(card_test "./test/card_test.cpp")
 add_executable(deck_test "./test/deck_test.cpp")
 add_executable(player_test "./test/player_test.cpp")
+add_executable(dealer_test "./test/dealer_test.cpp")
 
 # make libraries with source files
 add_library(card_library STATIC 
 "./src/card.cpp" 
 "./src/deck.cpp"
 "./src/player.cpp"
+"./src/dealer.cpp"
 )
 
 # link libraries to executables
@@ -37,9 +39,11 @@ target_link_libraries(main card_library)
 target_link_libraries(card_test gtest_main card_library)
 target_link_libraries(deck_test gtest_main card_library)
 target_link_libraries(player_test gtest_main card_library)
+target_link_libraries(dealer_test gtest_main card_library)
 
 
 # add test
 add_test(card_test card_test)
 add_test(deck_test deck_test)
 add_test(player_test player_test)
+add_test(dealer_test dealer_test)

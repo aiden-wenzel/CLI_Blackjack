@@ -9,6 +9,7 @@ private:
     int card_sum;
     double money;
     std::string name;
+    std::vector<Card> hand;
     
 public:
 
@@ -21,6 +22,7 @@ public:
     // @returns the combined score of the cards the player is delt
     int get_card_sum();
 
+    void add_card(const Card& card);
     // @param card_sum_in
     // the new card sum
     void set_card_sum(int card_sum_in);
