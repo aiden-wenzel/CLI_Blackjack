@@ -23,7 +23,7 @@ Card::Card(std::string rank_in, std::string suit_in) {
     else {std::cout << "error in constructing card\n";}
 }
 
-std::string Card::get_rank() {
+std::string Card::get_rank() const {
     return this->rank;
 }
 
@@ -31,7 +31,7 @@ void Card::set_rank(std::string rank_in) {
     this->rank = rank_in;
 }
 
-std::string Card::get_suit() {
+std::string Card::get_suit() const {
     return this->suit;
 }
 
@@ -43,3 +43,7 @@ int Card::get_value() {
     return this->value;
 }
 
+bool operator==(const Card& lhs, const Card& rhs) {
+    return (lhs.get_rank() == rhs.get_rank()) &&
+    (lhs.get_suit() == rhs.get_suit());
+}

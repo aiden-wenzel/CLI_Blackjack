@@ -16,14 +16,14 @@ public:
     Card(std::string rank_in, std::string suit_in);
 
     // @returns the rank of the card
-    std::string get_rank();
+    std::string get_rank() const;
 
     // @param rank_in
     // rank of the card to set
     void set_rank(std::string rank_in);
 
     // @returns the suit of the card
-    std::string get_suit();
+    std::string get_suit() const;
 
     // @param suit_in
     // suit of the card to be set
@@ -32,3 +32,5 @@ public:
     // @returns the combined value of the card as an int (ex: queen of spades would return 10)
     int get_value();
 };
+
+bool operator==(const Card& lhs, const Card& rhs);
