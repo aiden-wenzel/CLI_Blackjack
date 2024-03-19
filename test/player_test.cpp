@@ -20,15 +20,18 @@ TEST(player_test, player_place_bet) {
 
     std::stringstream expected_output;
     expected_output << "Enter the amount of money you would like to bet:\n";
+    expected_output << "You placed an invalid bet. Try again.\n";
+    expected_output << "Enter the amount of money you would like to bet:\n";
 
     std::stringstream actual_output;
 
-    std::string input_string = "20";
+    std::string input_string = "30 20";
     std::istringstream input(input_string);
     
     ASSERT_EQ(aiden.place_bet(actual_output, input), 20);
     ASSERT_EQ(actual_output.str(), expected_output.str());
 }
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
