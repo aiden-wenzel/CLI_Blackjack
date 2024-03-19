@@ -39,5 +39,5 @@ public:
 
     Card get_card_at(int index);
 
-    double place_bet();
+    double place_bet(std::ostream& output, std::istream& input);
 };

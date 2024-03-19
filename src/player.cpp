@@ -38,21 +38,21 @@ Card Player::get_card_at(int index) {
     return this->hand[index];
 }
 
-double Player::place_bet() {
+double Player::place_bet(std::ostream& output, std::istream& input) {
 // prompt the user to bet a certain amount of money
 // make sure that the user bets a valid amount of money (maybe do that in a while loop)
 // subtract the bet from the players money balance
 // return the bet amount
-    double bet_amount = 0;
+    double bet_amount;
     while (true) {
-        std::cout << "Enter the amount of money you would like to bet: ";
-        std::cin >> bet_amount;
+        output << "Enter the amount of money you would like to bet:\n";
+        input >> bet_amount;
 
         if (bet_amount > 0 && bet_amount <= this->money) {
             break;
         } 
         else {
-            std::cout << "You placed an invalid bet. Try again.\n";
+            output << "You placed an invalid bet. Try again.\n";
         }
     }
 
