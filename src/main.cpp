@@ -6,6 +6,25 @@
 
 using namespace std;
 
+Player* welcome();
+Deck* initialize_deck();
+
+int main() {
+	Player* main_player = welcome();
+	Deck* deck = initialize_deck();
+	Dealer* dealer = new Dealer;
+
+	
+
+
+
+
+
+	delete deck;
+	delete main_player;
+	return 0;
+}
+
 Player* welcome() {
 	std::cout << "Welcome to command line blackjack!\n";
 	std::cout << "You will be the only player at the table\n";
@@ -33,20 +52,4 @@ Deck* initialize_deck() {
 	}
 
 	return new Deck(suits_in, ranks_in);
-}
-
-int main() {
-	Player* main_player = welcome();
-	Deck* deck = initialize_deck();
-	Dealer* dealer = new Dealer;
-
-
-
-
-
-
-
-	delete deck;
-	delete main_player;
-	return 0;
 }
