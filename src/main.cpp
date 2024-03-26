@@ -23,9 +23,30 @@ Player* welcome() {
 	return new Player(name_in, money_in);
 }		
 
+Deck* initialize_deck() {
+	std::ifstream suits_in("../black_jack/suits.in");
+	std::ifstream ranks_in("../black_jack/ranks.in");
+	
+	if (!suits_in.is_open() || !ranks_in.is_open()) {
+		std::cout << "error in opening file streams\n";
+		return nullptr;
+	}
+
+	return new Deck(suits_in, ranks_in);
+}
+
 int main() {
 	Player* main_player = welcome();
+	Deck* deck = initialize_deck();
+	Dealer* dealer = new Dealer;
 
+
+
+
+
+
+
+	delete deck;
 	delete main_player;
 	return 0;
 }
