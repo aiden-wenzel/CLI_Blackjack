@@ -1,8 +1,0 @@
-Features:
-- store and save the players money in a .txt file
-- there should be the dealer and the human players
-- allow the player to double down
-- make player saves
-
-TODO:
-- figure out how to test deck constructor better
