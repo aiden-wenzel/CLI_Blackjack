@@ -14,6 +14,14 @@ void Dealer::deal(Player* player, Deck* deck) {
     player->add_card(deal_card);
 }
 
+void Dealer::deal(Dealer* dealer, Deck* deck) {
+    Card deal_card = deck->remove_top_card();
+    dealer->add_card(deal_card);
+}
+
+void Dealer::add_card(const Card& card) {
+    this->hand.push_back(card);
+}
 int Dealer::get_card_sum() {
     return this->card_sum;
 }

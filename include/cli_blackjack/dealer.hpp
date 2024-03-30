@@ -13,6 +13,10 @@ public:
 
     void deal(Player* player, Deck* deck);
 
+    void deal(Dealer* dealer, Deck* deck);
+
+    void add_card(const Card& card);
+
     int get_card_sum();
 
     int get_hand_size();
