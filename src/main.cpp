@@ -6,15 +6,28 @@
 
 using namespace std;
 
+// Welcomes the player and prompts them for the money they will be using and their name.
+// @returns A player pointer to a player on the heap
 Player* welcome();
+
+// Initializes a deck on the heap
+// @returns A deck pointer to a deck on the heap
 Deck* initialize_deck();
 
 int main() {
+	// initialize objects
 	Player* main_player = welcome();
 	Deck* deck = initialize_deck();
 	Dealer* dealer = new Dealer;
 
-	
+	// shuffle deck
+	deck->shuffle_deck(1000);
+
+	// first dealing round
+	dealer->deal(main_player, deck);
+	dealer->deal(dealer, deck);
+	dealer->deal(main_player, deck);
+	dealer->deal(dealer, deck);
 
 
 
