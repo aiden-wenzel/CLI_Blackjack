@@ -11,12 +11,16 @@ Dealer::Dealer() {
 
 void Dealer::deal(Player* player, Deck* deck) {
     Card deal_card = deck->remove_top_card();
+    int card_value = deal_card.get_value();
+    player->card_sum += card_value;
     player->add_card(deal_card);
     deck->num_cards--;
 }
 
 void Dealer::deal(Dealer* dealer, Deck* deck) {
     Card deal_card = deck->remove_top_card();
+    int card_value = deal_card.get_value();
+    dealer->card_sum += card_value;
     dealer->add_card(deal_card);
     deck->num_cards--;
 }
