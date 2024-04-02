@@ -14,7 +14,14 @@ Player* welcome();
 // @returns A deck pointer to a deck on the heap
 Deck* initialize_deck();
 
+// prints a 3 line gap to std::cout
+void print_gap();
+
+//clears the console;
+void clear_console();
+
 int main() {
+	clear_console();
 	// initialize objects
 	Player* main_player = welcome();
 	Deck* deck = initialize_deck();
@@ -65,4 +72,18 @@ Deck* initialize_deck() {
 	}
 
 	return new Deck(suits_in, ranks_in);
+}
+
+void print_gap() {
+	for (int i = 0; i < 3; i++) {
+		std::cout << "\n";
+	}
+}
+
+void clear_console() {
+	#if defined(_WIN32) || defined(_WIN64)
+        system("cls");
+    #else
+        system("clear");
+    #endif
 }
