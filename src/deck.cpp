@@ -2,6 +2,7 @@
 #include <fstream>
 #include <random>
 #include <vector>
+#include <ctime>
 #include "card.hpp"
 #include "deck.hpp"
 
@@ -41,6 +42,7 @@ int Deck::get_num_cards() const {
 }
 
 void Deck::shuffle_deck(int num_swaps) {
+    std::srand(std::time(0));
     for (int i = 0; i < num_swaps; i++) {
         int random_index_1 = std::rand() % this->num_cards;
         int random_index_2 = std::rand() % this->num_cards;
