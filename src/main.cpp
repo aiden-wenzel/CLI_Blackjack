@@ -27,6 +27,9 @@ int main() {
 	Deck* deck = initialize_deck();
 	Dealer* dealer = new Dealer;
 
+	print_gap();
+	int pot = main_player->place_bet(std::cout, std::cin);
+
 	// shuffle deck
 	deck->shuffle_deck(1000);
 
