@@ -26,4 +26,6 @@ public:
     // @param num_swaps
     // defines the number of times 2 random cards will be swapped to shuffle the deck
     void shuffle_deck(int num_swaps);
+
+    friend class Dealer;
 };

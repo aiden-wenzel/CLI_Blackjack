@@ -12,11 +12,13 @@ Dealer::Dealer() {
 void Dealer::deal(Player* player, Deck* deck) {
     Card deal_card = deck->remove_top_card();
     player->add_card(deal_card);
+    deck->num_cards--;
 }
 
 void Dealer::deal(Dealer* dealer, Deck* deck) {
     Card deal_card = deck->remove_top_card();
     dealer->add_card(deal_card);
+    deck->num_cards--;
 }
 
 void Dealer::add_card(const Card& card) {
