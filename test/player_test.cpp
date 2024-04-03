@@ -4,6 +4,7 @@
 #include "deck.hpp"
 #include "player.hpp"
 
+// tests the player constructor
 TEST(player_test, player_constructor) {
     double initial_money = 45.04;
     Player player("Aiden", initial_money);
@@ -13,6 +14,7 @@ TEST(player_test, player_constructor) {
     ASSERT_EQ(player.get_money(), 45.04);
 }
 
+// tests the place bet function
 TEST(player_test, player_place_bet) {
     Player aiden("Aiden", 20);
     ASSERT_EQ(aiden.get_money(), 20);
