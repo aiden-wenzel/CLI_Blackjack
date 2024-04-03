@@ -18,7 +18,7 @@ Deck* initialize_deck();
 // prints a 3 line gap to std::cout
 void print_gap();
 
-//clears the console;
+// clears the console;
 void clear_console();
 
 int main() {
@@ -43,7 +43,7 @@ int main() {
 
 
 
-
+	delete dealer;
 	delete deck;
 	delete main_player;
 	return 0;
