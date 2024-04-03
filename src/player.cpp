@@ -26,10 +26,6 @@ double Player::get_money() {
     return this->money;
 }
 
-void Player::set_money(double money_in) {
-    this->money = money_in;
-}
-
 std::string Player::get_name() {
     return this->name;
 }

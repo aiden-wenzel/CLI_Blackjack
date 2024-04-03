@@ -30,10 +30,6 @@ public:
     // @returns the total money that the player currently has
     double get_money();
 
-    // @param money_in
-    // the money that the player will have
-    void set_money(double money_in);
-
     // @returns the name of the player
     std::string get_name();
 
