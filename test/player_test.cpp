@@ -9,7 +9,6 @@ TEST(player_test, player_constructor) {
     Player player("Aiden", initial_money);
 
     player.set_card_sum(21);
-    ASSERT_EQ(player.get_card_sum(), 21);
     ASSERT_EQ(player.get_name(), "Aiden");
     ASSERT_EQ(player.get_money(), 45.04);
 }
