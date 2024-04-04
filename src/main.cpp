@@ -40,8 +40,14 @@ int main() {
 	dealer->deal(main_player, deck);
 	dealer->deal(dealer, deck);
 
-
-
+	// hit or stand
+	bool hit = false;
+	while (!hit || main_player->get_card_sum() <= 21) {
+		hit = main_player->hit(std::cout, std::cin);
+		if (hit) {
+			dealer->deal(main_player, deck);
+		}
+	}
 
 	delete dealer;
 	delete deck;

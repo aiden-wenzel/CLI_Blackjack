@@ -55,3 +55,23 @@ double Player::place_bet(std::ostream& output, std::istream& input) {
     this->money -= bet_amount;
     return bet_amount;
 }
+
+bool Player::hit(std::ostream& output, std::istream& input) {
+    output << "Would you like to hit or stand?\n";
+    int response;
+    while (true) {
+        output << "[1]: Hit\n";
+        output << "[2]: Stand\n";
+        input >> response;
+        if (response == 1) {
+            return true;
+        }
+        else if (response == 2) {
+            return false;
+        }
+        else {
+            output << "Please enter a valid option\n";
+        }
+    }
+    //return true;
+}

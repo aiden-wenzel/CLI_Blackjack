@@ -37,5 +37,7 @@ public:
 
     double place_bet(std::ostream& output, std::istream& input);
 
+    bool hit(std::ostream& output, std::istream& input);
+
     friend class Dealer;
 };
