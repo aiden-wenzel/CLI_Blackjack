@@ -40,12 +40,17 @@ int main() {
 	dealer->deal(main_player, deck);
 	dealer->deal(dealer, deck);
 
+	// print hand
+	main_player->print_hand(std::cout);
+
 	// hit or stand
 	bool hit = true;
 	while (hit && main_player->get_card_sum() <= 21) {
 		hit = main_player->hit(std::cout, std::cin);
 		if (hit) {
 			dealer->deal(main_player, deck);
+			print_gap();
+			main_player->print_hand(std::cout);
 		}
 	}
 
