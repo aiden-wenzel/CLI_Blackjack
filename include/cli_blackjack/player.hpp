@@ -39,5 +39,7 @@ public:
 
     bool hit(std::ostream& output, std::istream& input);
 
+    void print_hand(std::ostream& output);
+
     friend class Dealer;
 };
