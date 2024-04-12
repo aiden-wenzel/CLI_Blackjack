@@ -34,3 +34,5 @@ public:
 };
 
 bool operator==(const Card& lhs, const Card& rhs);
+
+std::ostream& operator<<(std::ostream& os, const Card& card);
