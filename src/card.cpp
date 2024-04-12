@@ -47,3 +47,8 @@ bool operator==(const Card& lhs, const Card& rhs) {
     return (lhs.get_rank() == rhs.get_rank()) &&
     (lhs.get_suit() == rhs.get_suit());
 }
+
+std::ostream& operator<<(std::ostream& os, const Card& card) {
+    os << card.get_rank() << " of " << card.get_suit();
+    return os;
+}
