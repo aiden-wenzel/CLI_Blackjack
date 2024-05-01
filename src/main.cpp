@@ -44,7 +44,7 @@ int main() {
 	dealer->print_hand(std::cout);
 	main_player->print_hand(std::cout);
 
-	// hit or stand
+	// player hit or stand
 	bool hit = true;
 	while (hit && main_player->get_card_sum() <= 21) {
 		hit = main_player->hit(std::cout, std::cin);
@@ -54,6 +54,11 @@ int main() {
 			main_player->print_hand(std::cout);
 		}
 	}
+    
+    // dealer hit or stand
+    while (hit && dealer->get_card_sum() <= 21) {
+        
+    }
 
 	delete dealer;
 	delete deck;

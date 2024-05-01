@@ -25,4 +25,6 @@ public:
     int get_hand_size();
 
     void print_hand(std::ostream& output);
+
+    bool hit(int player_card_sum);
 };

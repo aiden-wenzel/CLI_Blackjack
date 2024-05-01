@@ -47,3 +47,10 @@ void Dealer::print_hand(std::ostream& output) {
     }
     output << "]\n";
 }
+
+bool Dealer::hit(int player_card_sum) {
+   if (this->card_sum <= player_card_sum) {
+       return true;
+   } 
+   return false;
+}
