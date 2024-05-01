@@ -41,6 +41,7 @@ int main() {
 	dealer->deal(dealer, deck);
 
 	// print hand
+	dealer->print_hand(std::cout);
 	main_player->print_hand(std::cout);
 
 	// hit or stand

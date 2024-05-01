@@ -41,7 +41,7 @@ double Player::place_bet(std::ostream& output, std::istream& input) {
 // return the bet amount
     double bet_amount;
     while (true) {
-        output << "Enter the amount of money you would like to bet:\n";
+        output << "Enter the amount of money you would like to bet: ";
         input >> bet_amount;
 
         if (bet_amount > 0 && bet_amount <= this->money) {

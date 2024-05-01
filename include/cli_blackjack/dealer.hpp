@@ -23,4 +23,6 @@ public:
     int get_card_sum();
 
     int get_hand_size();
+
+    void print_hand(std::ostream& output);
 };
