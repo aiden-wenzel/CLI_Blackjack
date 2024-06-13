@@ -1,3 +1,13 @@
+# debug vs release
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(CMAKE_CXX_COMPILER "clang++")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -g -fsanitize=address -pedantic")
+
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
+
+endif()
+
 # set cmake standards
 cmake_minimum_required(VERSION 3.10)
 project(cli_blackjack)
@@ -5,7 +15,7 @@ enable_testing()
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_compile_options("-g") 
+
 # fetch google test
 include(FetchContent)
 
