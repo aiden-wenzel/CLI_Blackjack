@@ -22,8 +22,8 @@ Deck::Deck(std::ifstream &suits_input, std::ifstream &ranks_input) {
         ranks.push_back(rank_temp);
     }
 
-    for (int i = 0; i < suits.size(); i++) {
-        for (int j = 0; j < ranks.size(); j++) {
+    for (size_t i = 0; i < suits.size(); i++) {
+        for (size_t j = 0; j < ranks.size(); j++) {
             Card card_temp(ranks[j], suits[i]);
             this->cards.push_back(card_temp);
         }

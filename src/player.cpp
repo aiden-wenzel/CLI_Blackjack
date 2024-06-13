@@ -78,7 +78,7 @@ bool Player::hit(std::ostream& output, std::istream& input) {
 
 void Player::print_hand(std::ostream& output) {
     output << "Your hand: [";
-    for (int i = 0; i < this->hand.size(); i++) {
+    for (size_t i = 0; i < this->hand.size(); i++) {
         if (i == this->hand.size()-1) {
             output << this->hand[i];
             break;
