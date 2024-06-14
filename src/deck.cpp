@@ -1,10 +1,9 @@
 #include <string>
 #include <fstream>
-#include <random>
 #include <vector>
 #include <ctime>
-#include "card.hpp"
-#include "deck.hpp"
+#include "../include/cli_blackjack/card.hpp"
+#include "../include/cli_blackjack/deck.hpp"
 
 Deck::Deck(std::ifstream &suits_input, std::ifstream &ranks_input) {
     std::vector<std::string> suits;

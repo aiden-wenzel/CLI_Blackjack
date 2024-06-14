@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "card.hpp"
+#include "../include/cli_blackjack/card.hpp"
 
 Card::Card(std::string rank_in, std::string suit_in) {
     this->rank = rank_in;

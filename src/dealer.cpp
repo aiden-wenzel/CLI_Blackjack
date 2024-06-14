@@ -1,7 +1,7 @@
-#include "card.hpp"
-#include "deck.hpp"
-#include "player.hpp"
-#include "dealer.hpp"
+#include "../include/cli_blackjack/card.hpp"
+#include "../include/cli_blackjack/deck.hpp"
+#include "../include/cli_blackjack/player.hpp"
+#include "../include/cli_blackjack/dealer.hpp"
 
 
 Dealer::Dealer() {

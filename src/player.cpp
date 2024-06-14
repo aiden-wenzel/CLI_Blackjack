@@ -1,7 +1,5 @@
-#include <iostream>
-#include "deck.hpp"
-#include "card.hpp"
-#include "player.hpp"
+#include "../include/cli_blackjack/card.hpp"
+#include "../include/cli_blackjack/player.hpp"
 
 Player::Player(const std::string &name_in, double money_in) {
     this->name = name_in;
