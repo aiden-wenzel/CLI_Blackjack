@@ -3,3 +3,4 @@ build
 .cache
 release/
 debug/
+black_jack/money.txt
