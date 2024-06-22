@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <iostream>
+#include <fstream>
 #include "../include/cli_blackjack/deck.hpp"
 #include "../include/cli_blackjack/player.hpp"
 #include "../include/cli_blackjack/dealer.hpp"
@@ -26,7 +27,6 @@ int main() {
     Player* main_player = welcome();
     Dealer* dealer = new Dealer;
     bool playing = true;
-
     while (playing) {
 
         print_gap();
@@ -93,24 +93,45 @@ int main() {
         delete deck;
     }
 
+    int player_money = main_player->get_money();
+
     delete main_player;
     delete dealer;
+    
+    std::cout << "Saving remaining balance.\n";
+    std::ofstream save("../black_jack/money.txt");
+    save << player_money;
+
     return 0;
 }
 
 Player* welcome() {
+    std::ifstream money_save("../black_jack/money.txt");
+    int saved_money = 0;
+    if (money_save.is_open()) {
+        money_save >> saved_money;
+    }
+
     std::cout << "Welcome to command line blackjack!\n";
     std::cout << "You will be the only player at the table\n";
-
+    
     std::string name_in;
     std::cout << "Please enter you name: ";
     std::cin >> name_in;
-
+        
     double money_in;
-    std::cout << "Please enter the amount of money you're bringing to the table: ";
-    std::cin >> money_in;
+    if (money_save.is_open() && saved_money != 0) {
+        std::cout << "Using your balance from the previous game.\n";
+        money_in = saved_money;
+    } 
+    
+    else {
+        std::cout << "Please enter the amount of money you're bringing to the table: ";
+        std::cin >> money_in;
+    }
 
     std::cout << "You're all set. Enjoy the game!\n";
+    money_save.close();
 
     return new Player(name_in, money_in);
 }		
