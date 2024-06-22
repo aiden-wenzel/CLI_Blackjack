@@ -24,64 +24,77 @@ int main() {
     clear_console();
     // initialize objects
     Player* main_player = welcome();
-    Deck* deck = initialize_deck();
     Dealer* dealer = new Dealer;
+    bool playing = true;
 
-    print_gap();
-    //	int pot = main_player->place_bet(std::cout, std::cin);
+    while (playing) {
 
-    // shuffle deck
-    deck->shuffle_deck(1000);
+        print_gap();
+        int pot = main_player->place_bet(std::cout, std::cin);
+        Deck* deck = initialize_deck();
+        deck->shuffle_deck(1000);
 
-    // first dealing round
-    dealer->deal(main_player, deck);
-    dealer->deal(dealer, deck);
-    dealer->deal(main_player, deck);
-    dealer->deal(dealer, deck);
+        // first dealing round
+        dealer->deal(main_player, deck);
+        dealer->deal(dealer, deck);
+        dealer->deal(main_player, deck);
+        dealer->deal(dealer, deck);
 
-    // print hand
-    dealer->print_hand(std::cout);
-    main_player->print_hand(std::cout);
+        // print hand
+        dealer->print_hand(std::cout);
+        main_player->print_hand(std::cout);
 
-    // player hit or stand
-    bool hit = true;
-    while (hit && main_player->get_card_sum() <= 21) {
-        hit = main_player->hit(std::cout, std::cin);
-        if (hit) {
-            dealer->deal(main_player, deck);
-            print_gap();
-            main_player->print_hand(std::cout);
-        }
-    }
-
-    if (main_player->get_card_sum() > 21) {
-        std::cout << "BUST\n"; 
-    }
-    
-    // dealer hit or stand
-    else {
-        hit = true;
-        while (hit && dealer->get_card_sum() <= 21) {
-            hit = dealer->hit(main_player->get_card_sum());
+        // player hit or stand
+        bool hit = true;
+        while (hit && main_player->get_card_sum() <= 21) {
+            hit = main_player->hit(std::cout, std::cin);
             if (hit) {
-                dealer->deal(dealer, deck);
+                dealer->deal(main_player, deck);
                 print_gap();
-                dealer->print_hand(std::cout);
+                main_player->print_hand(std::cout);
             }
         }
 
-        if (dealer->get_card_sum() > 21 ) {
-            std::cout << "You win\n";
+        if (main_player->get_card_sum() > 21) {
+            std::cout << "BUST\n"; 
         }
-        
-        else if (dealer->get_card_sum() > main_player->get_card_sum()) {
-            std::cout << "You lose\n";
+
+        // dealer hit or stand
+        else {
+            hit = true;
+            while (hit && dealer->get_card_sum() <= 21) {
+                hit = dealer->hit(main_player->get_card_sum());
+                if (hit) {
+                    dealer->deal(dealer, deck);
+                    print_gap();
+                    std::cout << "The dealer draws a card.\n";
+                    dealer->print_hand(std::cout);
+                }
+            }
+
+            if (dealer->get_card_sum() > 21) {
+                std::cout << "You win\n";
+                main_player->set_money(pot * 2 + main_player->get_money());
+            }
+
+            else if (dealer->get_card_sum() > main_player->get_card_sum()) {
+                std::cout << "You lose\n";
+            }
         }
+
+        std::string response;
+        std::cout << "Would you like to play again?[y/n] ";
+        std::cin >> response;
+        if (response == "y") {playing = true;}
+        else if (response == "n") {playing = false;}
+
+        main_player->clear_hand();
+        dealer->clear_hand();
+        delete deck;
     }
 
     delete main_player;
     delete dealer;
-    delete deck;
     return 0;
 }
 
