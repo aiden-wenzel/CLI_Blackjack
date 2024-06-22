@@ -24,6 +24,10 @@ double Player::get_money() {
     return this->money;
 }
 
+void Player::set_money(double money_in) {
+    this->money = money_in;
+}
+
 std::string Player::get_name() {
     return this->name;
 }
@@ -84,4 +88,9 @@ void Player::print_hand(std::ostream& output) {
         output << this->hand[i] << " | ";
     }
     output << "]\n";
+}
+
+void Player::clear_hand() {
+    this->hand.erase(this->hand.begin(), this->hand.end());
+    this->card_sum = 0;
 }
