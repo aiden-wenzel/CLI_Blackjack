@@ -30,6 +30,8 @@ public:
     // @returns the total money that the player currently has
     double get_money();
 
+    void set_money(double money_in);
+
     // @returns the name of the player
     std::string get_name();
 
@@ -40,6 +42,8 @@ public:
     bool hit(std::ostream& output, std::istream& input);
 
     void print_hand(std::ostream& output);
+
+    void clear_hand();
 
     friend class Dealer;
 };
